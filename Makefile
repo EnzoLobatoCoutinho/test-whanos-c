@@ -1,12 +1,7 @@
-CC = gcc
-CFLAGS = -Wall -Wextra
-TARGET = compiled-app
-SRC = app/main.c
-
-$(TARGET): $(SRC)
-    $(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+compiled-app: app/main.c
+	gcc -o compiled-app app/main.c
 
 clean:
-    rm -f $(TARGET)
+	rm -f compiled-app
 
 .PHONY: clean
