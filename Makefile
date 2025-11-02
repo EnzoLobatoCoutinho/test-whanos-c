@@ -1,7 +1,16 @@
-compiled-app: app/main.c
-	gcc -o compiled-app app/main.c
+NAME = compiled-app
+
+SRC = app/hello.c
+
+all: $(NAME)
+
+$(NAME):
+	gcc -o $(NAME) $(SRC)
 
 clean:
-	rm -f compiled-app
+	rm -f *.o
 
-.PHONY: clean
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
